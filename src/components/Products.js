@@ -101,9 +101,12 @@ const Products = () => {
       if (e.response.status === 500) {
         enqueueSnackbar(`${e.response.data.message}`, { variant: "error" });
       }
+    }finally{
+      setLoad(false);
+      
     }
 
-    setLoad(false);
+    
   };
 
   useEffect(() => {
