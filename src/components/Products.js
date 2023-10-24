@@ -96,7 +96,7 @@ const Products = () => {
       console.log(response.data);
       setProduct(response.data);
 
-      setLoad(false);
+      
     } catch (error) {
       if (error.response && error.response.status === 400) {
         enqueueSnackbar(error.response.data.message, { variant: "error" });
