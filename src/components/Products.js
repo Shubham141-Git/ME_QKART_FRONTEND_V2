@@ -97,9 +97,9 @@ const Products = () => {
       setProduct(response.data);
 
       setLoad(false);
-    } catch (e) {
-      if (e.response.status === 500) {
-        enqueueSnackbar(`${e.response.data.message}`, { variant: "error" });
+    } catch (error) {
+      if (error.response && error.response.status === 400) {
+        enqueueSnackbar(error.response.data.message, { variant: "error" });
       }
     }finally{
       setLoad(false);
